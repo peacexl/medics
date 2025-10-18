@@ -1,16 +1,19 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   Box, Flex, Text, Button, Image, VStack, HStack, Modal,
-  ModalOverlay, ModalContent, ModalCloseButton, ModalBody, useDisclosure
+  ModalOverlay, ModalContent, ModalCloseButton, ModalBody, useDisclosure,
+  Stack, IconButton, Input, InputGroup, InputRightElement
 } from "@chakra-ui/react";
-import { FaPlay } from "react-icons/fa";
+import { FaPlay, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import ChartA from "./ChartA";
 import ChartB from "./ChartB";
-
+import docImg from "../assets/doc.png";
 
 const Body = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const videoLink = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+  // updated demo video (user provided youtu.be link converted to embed URL)
+  const videoLink = "https://www.youtube.com/embed/gmmYS6z9r6Q";
 
   return (
     <Box as="section" w="100%" minH="100vh"
@@ -20,7 +23,7 @@ const Body = () => {
       {/* ---------- Desktop View ---------- */}
       <Flex display={{ base: "none", md: "flex" }}
         align="center" justify="space-between" w="88%" mx="auto"
-        flexWrap="wrap" gap="50px">
+        flexWrap="wrap" gap="50px" mt="0px">
 
         {/* Left Section */}
         <VStack align="flex-start" textAlign="left" spacing="22px"
@@ -43,11 +46,13 @@ const Body = () => {
           </Text>
 
           <HStack spacing="20px" pt="10px">
-            <Button bg="#C8FF5A" color="#0C3836" fontWeight="600"
-              borderRadius="9999px" px="30px" py="20px" fontSize="15px"
-              _hover={{ bg: "#B6F04F" }}>
-              Book a Free Consultation
-            </Button>
+            <Link to="/services/consultation" style={{ textDecoration: 'none' }}>
+              <Button bg="#C8FF5A" color="#0C3836" fontWeight="600"
+                borderRadius="9999px" px="30px" py="20px" fontSize="15px"
+                _hover={{ bg: "#B6F04F" }}>
+                Book a Free Consultation
+              </Button>
+            </Link>
 
             <Button leftIcon={<FaPlay />} variant="outline"
               borderColor="rgba(255,255,255,0.3)" color="white"
@@ -62,7 +67,7 @@ const Body = () => {
         <Box position="relative" display="flex" justifyContent="center"
           alignItems="center" flex="1" minW="420px">
 
-          <Image src="/assets/doc.png" alt="Doctor"
+          <Image src={docImg} alt="Doctor"
             borderRadius="2xl" maxW="460px" mx="auto" />
 
           <Box position="absolute" top="5%" right="-50px"
@@ -102,16 +107,18 @@ const Body = () => {
   </VStack>
 
   {/* Buttons */}
-  <HStack spacing="15px" w="100%">
-    <Button flex="1" bg="#C8FF5A" color="#0C3836" fontWeight="600"
-      borderRadius="9999px" py="18px" fontSize="14px"
-      _hover={{ bg: "#B6F04F" }}>
-      Book a Free Consultation
-    </Button>
+  <HStack spacing="12px" w="100%" align="stretch">
+    <Link to="/services/consultation" style={{ flex: 1, textDecoration: 'none' }}>
+      <Button w="100%" flex="1" minW="0" bg="#C8FF5A" color="#0C3836" fontWeight="600"
+        borderRadius="9999px" py="14px" fontSize="14px"
+        _hover={{ bg: "#B6F04F" }}>
+        Book a Free Consultation
+      </Button>
+    </Link>
 
-    <Button flex="1" leftIcon={<FaPlay />} variant="outline"
+    <Button flexShrink={0} minW="140px" leftIcon={<FaPlay />} variant="outline"
       borderColor="rgba(255,255,255,0.3)" color="white"
-      py="18px" borderRadius="9999px" fontSize="14px"
+      py="14px" borderRadius="9999px" fontSize="14px"
       _hover={{ bg: "rgba(255,255,255,0.1)" }} onClick={onOpen}>
       Watch a Demo
     </Button>
@@ -125,7 +132,7 @@ const Body = () => {
 
   {/* Doctor Image overlapping ChartA */}
   <Box position="relative" w="100%" maxW="300px" alignSelf="flex-end" mt="-190px" mr="-45px">
-    <Image src="/assets/doc.png" alt="Doctor"
+    <Image src={docImg} alt="Doctor"
       borderRadius="2xl" w="100%" />
   </Box>
 
@@ -152,6 +159,7 @@ const Body = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
+    
     </Box>
   );
 };

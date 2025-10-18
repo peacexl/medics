@@ -13,6 +13,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Tooltip,
 } from "@chakra-ui/react";
 import { FaSearch, FaUserCircle, FaChevronDown } from "react-icons/fa";
 
@@ -23,7 +24,7 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", to: "/" },
-    { label: "Services", to: "/services" },
+    { label: "Services", to: "/services/consultation" },
     { label: "About", to: "/about" },
     { label: "Products", to: "/products" },
     { label: "Blog", to: "/blog" },
@@ -232,7 +233,11 @@ const Header = () => {
 
           {/* User */}
           <GridItem w="100%" textAlign="center">
-            <Icon as={FaUserCircle} boxSize="18px" color="#88E6DA" />
+            <Tooltip label="My account" placement="bottom" hasArrow shouldWrapChildren>
+              <Link to="/account" style={{ textDecoration: 'none', display: 'inline-flex' }} aria-label="My account">
+                <Icon as={FaUserCircle} boxSize="18px" color="#88E6DA" cursor="pointer" />
+              </Link>
+            </Tooltip>
           </GridItem>
 
           {/* Contact */}
@@ -452,7 +457,11 @@ const Header = () => {
               w="140px"
             />
           </Flex>
-          <Icon as={FaUserCircle} boxSize="22px" color="#88E6DA" cursor="pointer" />
+          <Tooltip label="My account" placement="bottom" hasArrow shouldWrapChildren>
+            <Link to="/account" style={{ textDecoration: 'none', display: 'inline-flex' }} aria-label="My account">
+              <Icon as={FaUserCircle} boxSize="22px" color="#88E6DA" cursor="pointer" />
+            </Link>
+          </Tooltip>
           <Link to="/contact">
             <Button
               bg="linear-gradient(90deg,#38B2AC,#2C9F9A)"
