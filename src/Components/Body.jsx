@@ -62,7 +62,7 @@ const Body = () => {
         <Box position="relative" display="flex" justifyContent="center"
           alignItems="center" flex="1" minW="420px">
 
-          <Image src="src/assets/doc.jpeg" alt="Doctor"
+          <Image src="src/assets/doc.png" alt="Doctor"
             borderRadius="2xl" maxW="460px" mx="auto" />
 
           <Box position="absolute" top="5%" right="-50px"
@@ -82,7 +82,7 @@ const Body = () => {
 
 {/* ---------- Mobile View ---------- */}
 <VStack display={{ base: "flex", md: "none" }} spacing="25px"
-  align="center" w="90%" mx="auto" mt="70px">
+  align="center" w="90%" mx="auto" mt="80px">
 
   {/* Writeup */}
   <VStack spacing="16px" align="flex-start" w="100%">
@@ -125,7 +125,7 @@ const Body = () => {
 
   {/* Doctor Image overlapping ChartA */}
   <Box position="relative" w="100%" maxW="300px" alignSelf="flex-end" mt="-190px" mr="-45px">
-    <Image src="src/assets/doc.jpeg" alt="Doctor"
+    <Image src="src/assets/doc.png" alt="Doctor"
       borderRadius="2xl" w="100%" />
   </Box>
 
