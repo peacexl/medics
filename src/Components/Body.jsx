@@ -62,7 +62,7 @@ const Body = () => {
         <Box position="relative" display="flex" justifyContent="center"
           alignItems="center" flex="1" minW="420px">
 
-          <Image src="src/assets/doc.png" alt="Doctor"
+          <Image src="/assets/doc.png" alt="Doctor"
             borderRadius="2xl" maxW="460px" mx="auto" />
 
           <Box position="absolute" top="5%" right="-50px"
@@ -125,7 +125,7 @@ const Body = () => {
 
   {/* Doctor Image overlapping ChartA */}
   <Box position="relative" w="100%" maxW="300px" alignSelf="flex-end" mt="-190px" mr="-45px">
-    <Image src="src/assets/doc.png" alt="Doctor"
+    <Image src="/assets/doc.png" alt="Doctor"
       borderRadius="2xl" w="100%" />
   </Box>
 
