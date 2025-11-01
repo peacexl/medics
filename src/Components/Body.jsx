@@ -87,7 +87,7 @@ const Body = () => {
 
 {/* ---------- Mobile View ---------- */}
 <VStack display={{ base: "flex", md: "none" }} spacing="25px"
-  align="center" w="90%" mx="auto" mt="80px">
+  align="center" w="90%" mx="auto" mt="30px">
 
   {/* Writeup */}
   <VStack spacing="16px" align="flex-start" w="100%">
