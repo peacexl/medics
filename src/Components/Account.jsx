@@ -91,7 +91,22 @@ const Account=()=>{
             </Flex>
           </Flex>
         </Box>
-      ):<Text color="gray.400">Please sign in to view your account.</Text>}
+      ): (
+  <Text color="gray.400" textAlign="center">
+    Please{" "}
+    <Text
+      as="span"
+      color="teal.300"
+      cursor="pointer"
+      textDecoration="underline"
+      _hover={{ color: "teal.200" }}
+      onClick={() => nav("/signup")}
+    >
+      sign in
+    </Text>{" "}
+    to view your account.
+  </Text>
+)}
 
       <Divider my={8}/>
 
