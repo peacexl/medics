@@ -18,7 +18,7 @@ const Signup = () => {
   const handleSubmit=e=>{
     e.preventDefault();
     if(!form.name.trim())return toast({title:"Name required",status:"error"});
-    if(!/\\S+@\\S+\\.\\S+/.test(form.email))return toast({title:"Invalid email",status:"error"});
+    if(!/\S+@\S+\.\S+/.test(form.email)) return toast({ title: "Invalid email", status: "error" });
     if(form.password.length<6)return toast({title:"Weak password",status:"error"});
     if(form.dob && new Date(form.dob)>new Date())return toast({title:"Invalid date of birth",status:"error"});
 
